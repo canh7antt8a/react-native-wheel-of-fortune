@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -33,7 +33,7 @@ const iconRewards = [
   require('./knob.png'),
   require('./knob.png'),
   require('./knob.png'),
-  
+
 ];
 
 class App extends Component {
@@ -73,15 +73,15 @@ class App extends Component {
     return (
       <View style={styles.container}>
         <StatusBar barStyle={'light-content'} />
-        <View style={{marginTop: 200}}>
-        <WheelOfFortune
-          options={wheelOptions}
-          getWinner={(value, index) => {
-            this.setState({winnerValue: value, winnerIndex: index});
-          }}
-        />
+        <View style={{ marginTop: 200 }}>
+          <WheelOfFortune
+            options={wheelOptions}
+            getWinner={(value, index) => {
+              this.setState({ winnerValue: value, winnerIndex: index });
+            }}
+          />
         </View>
-       
+
         {!this.state.started && (
           <View style={styles.startButtonView}>
             <TouchableOpacity
@@ -98,7 +98,7 @@ class App extends Component {
             </Text>
             <TouchableOpacity
               onPress={() => {
-                this.setState({winnerIndex: null});
+                this.setState({ winnerIndex: null });
                 this.child._tryAgain();
               }}
               style={styles.tryAgainButton}>
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#E74C3C'
+    // backgroundColor: '#E74C3C'
   },
   startButtonView: {
     position: 'absolute',
